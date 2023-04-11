@@ -1,19 +1,23 @@
 import React from 'react'
-import { Typography, styled } from '@mui/material';
+import { styled } from '@mui/material';
 import models from '../images/model-s.jpg'
 import arrow from '../images/down-arrow.svg'
+import styledd from 'styled-components';
 
-const Wrap = styled('div')({
+const Wrap = styled('div')(({ bgImage }) => ({
     width: '100vw',
     height: '100vh',
-    backgroundImage: `URL(${models})`,
+    backgroundImage: `url(${bgImage})`,
     backgroundSize: 'cover',
     backgroundPosition: 'center',
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
     justifyContent: 'space-between'
-})
+
+}))
+
+
 const ItemText = styled('div')({
     paddingTop: '15vh',
     textAlign: 'center'
@@ -21,7 +25,8 @@ const ItemText = styled('div')({
 
 const ButtonGroup = styled('div')({
     display: 'flex',
-    marginBottom: '30px'
+    marginBottom: '30px',
+
 
 })
 const LeftButton = styled('div')({
@@ -67,11 +72,12 @@ const DownArrow = styled('img')({
     marginLeft: '230px',
     animation: 'animateDown infinite 1.5s'
 })
-const Section = () => {
+const Section = ({ title, backgroundImg }) => {
+
     return (
-        <Wrap>
+        <Wrap bgImage={backgroundImg}>
             <ItemText>
-                <h1>Model S</h1>
+                <h1>{title}</h1>
                 <p>Order Online For Touchless Delivery</p>
             </ItemText>
             <div>
