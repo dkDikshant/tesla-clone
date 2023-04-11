@@ -1,8 +1,9 @@
 import React from 'react'
 import { styled } from '@mui/material';
-import models from '../images/model-s.jpg'
 import arrow from '../images/down-arrow.svg'
-import styledd from 'styled-components';
+import Fade from 'react-reveal/Fade';
+
+
 
 const Wrap = styled('div')(({ bgImage }) => ({
     width: '100vw',
@@ -76,18 +77,22 @@ const Section = ({ title, backgroundImg }) => {
 
     return (
         <Wrap bgImage={backgroundImg}>
-            <ItemText>
-                <h1>{title}</h1>
-                <p>Order Online For Touchless Delivery</p>
-            </ItemText>
+            <Fade bottom>
+                <ItemText>
+                    <h1>{title}</h1>
+                    <p>Order Online For Touchless Delivery</p>
+                </ItemText>
+            </Fade>
             <div>
                 <ButtonGroup>
-                    <LeftButton>
-                        custom order
-                    </LeftButton>
-                    <RightButton>
-                        Existing inventory
-                    </RightButton>
+                    <Fade bottom >
+                        <LeftButton>
+                            custom order
+                        </LeftButton>
+                        <RightButton>
+                            Existing inventory
+                        </RightButton>
+                    </Fade>
                 </ButtonGroup>
                 <DownArrow src={arrow} />
             </div>
