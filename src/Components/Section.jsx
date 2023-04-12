@@ -6,6 +6,7 @@ import Fade from 'react-reveal/Fade';
 
 
 const Wrap = styled('div')(({ bgImage }) => ({
+
     width: '100vw',
     height: '100vh',
     backgroundImage: `url(${bgImage})`,
@@ -20,6 +21,7 @@ const Wrap = styled('div')(({ bgImage }) => ({
 
 
 const ItemText = styled('div')({
+    zIndex: -1,
     paddingTop: '15vh',
     textAlign: 'center'
 })
@@ -94,6 +96,7 @@ const Section = ({ title, backgroundImg }) => {
                         </RightButton>
                     </Fade>
                 </ButtonGroup>
+
                 <DownArrow src={arrow} />
             </div>
 
